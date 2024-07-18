@@ -62,8 +62,12 @@ INSERT INTO PURCHASE VALUES('O00006','C00005','P0004',1,'26-MAY-16');
 
 SELECT * FROM PURCHASE;
 
+Select Name from CUSTOMER where city='Madras';
 
-
+NAME
+---------------
+Vandana Saitwal
+Rukmini
 
 
 
