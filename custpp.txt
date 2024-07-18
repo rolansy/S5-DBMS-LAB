@@ -190,3 +190,95 @@ Madras		Tamil Nadu
 Bombay		Maharashtra
 Bombay		Maharashtra
 Madras		Tamil Nadu
+
+select avg(price) from PRODUCT;
+
+AVG(PRICE)
+----------
+    4049.8
+
+
+select cust_no,quantity from PURCHASE order by quantity;
+
+CUST_NO 	  QUANTITY
+--------------- ----------
+C00003			 1
+C00005			 1
+C00002			 2
+C00004			 2
+C00006			 3
+C00003			 4
+
+update PURCHASE set prod_no='P0008' where cust_no='C00003';
+
+
+select count(*) from customer where city='Delhi';
+
+  COUNT(*)
+----------
+	 1
+
+select cust_no from PURCHASE where QUANTITY>3;
+
+CUST_NO
+---------------
+C00003
+
+ALTER TABLE PURCHASE MODIFY orderdate VARCHAR(10);
+
+
+select min(price),max(price) from PRODUCT;
+
+MIN(PRICE) MAX(PRICE)
+---------- ----------
+       999	11000
+
+
+select company,count(*) from PRODUCT where company in ('Wipro','HCL') group by company;
+
+COMPANY 	  COUNT(*)
+--------------- ----------
+Wipro			 2
+HCL			 2
+
+select name from customer order by name;
+
+NAME
+---------------
+Basu Navindagi
+Ivan Bayross
+Pramada Jaguste
+Ravi Sreedharan
+Rukmini
+Vandana Saitwal
+
+select * from PURCHASE order by orderdate desc;
+
+ORDER_NO	CUST_NO 	PROD_NO 	  QUANTITY ORDERDATE
+--------------- --------------- --------------- ---------- ------------------
+O00006		C00005		P0004			 1 26-MAY-16
+O00005		C00004		P0002			 2 22-MAY-16
+O00004		C00003		P0005			 4 07-APR-16
+O00003		C00006		P0001			 3 20-FEB-16
+O00002		C00003		P0002			 1 27-JAN-16
+O00001		C00002		P0003			 2 20-JAN-16
+
+DELETE FROM PRODUCT WHERE product_no = 'P0003';
+
+ERROR at line 1:
+ORA-02292: integrity constraint (RONAL.SYS_C007025) violated - child record
+found
+
+CREATE TABLE PURCHASE_SUMMARY AS SELECT order_no, orderdate FROM PURCHASE;
+
+
+ORDER_NO	ORDERDATE
+--------------- ------------------
+O00001		20-JAN-16
+O00002		27-JAN-16
+O00003		20-FEB-16
+O00004		07-APR-16
+O00005		22-MAY-16
+O00006		26-MAY-16
+
+drop table PURCHASE_SUMMARY;
