@@ -69,6 +69,13 @@ NAME
 Vandana Saitwal
 Rukmini
 
+select cust_no from PURCHASE where orderdate LIKE '___JAN___';
+
+CUST_NO
+---------------
+C00002
+C00003
+
 
 
 
