@@ -1,0 +1,73 @@
+create table PURCHASE(order_no varchar(15) not null primary key, cust_no varchar(15) NOT NULL , prod_no varchar(15) NOT NULL, quantity INT NOT NULL, orderdate date,foreign key(cust_no) references CUSTOMER(cust_no),foreign key(prod_no) references PRODUCT(product_no));
+
+create table CUSTOMER(cust_no varchar(15) not null primary key, name varchar(15) not null,age int not null, city varchar(15) not null, pincode int not null, state varchar(15) not null);
+
+create table PRODUCT(product_no varchar(15) not null primary key, description varchar(15) not null,company varchar(15) not null, price int not null);
+
+create table SUPPLIER(s_no varchar(15) not null primary key, sname varchar(15) not null,age int not null, city varchar(15) not null);
+
+INSERT INTO CUSTOMER VALUES ('C00001','Ivan Bayross',35,'Bombay',400054,'Maharashtra') , ('C00002','Vandana Saitwal',35,'Madras',780001,'Tamil Nadu') , ('C00003','Pramada Jaguste',55,'Bombay',400057,'Maharashtra') , ('C00004','Basu Navindagi',45,'Bombay',400056,'Maharashtra') , ('C00005','Ravi Sreedharan',25,'Delhi',10001,'Delhi') , ('C00006','Rukmini',25,'Madras',780001,'Tamil Nadu');
+
+INSERT INTO CUSTOMER VALUES('C00001','Ivan Bayross',35,'Bombay',400054,'Maharashtra') ;
+
+INSERT INTO CUSTOMER VALUES('C00002','Vandana Saitwal',35,'Madras',780001,'Tamil Nadu');
+
+INSERT INTO CUSTOMER VALUES('C00003','Pramada Jaguste',55,'Bombay',400057,'Maharashtra');
+
+INSERT INTO CUSTOMER VALUES('C00004','Basu Navindagi',45,'Bombay',400056,'Maharashtra');
+
+INSERT INTO CUSTOMER VALUES('C00005','Ravi Sreedharan',25,'Delhi',10001,'Delhi');
+
+INSERT INTO CUSTOMER VALUES('C00006','Rukmini',25,'Madras',780001,'Tamil Nadu');
+
+select * from customer;
+
+INSERT INTO SUPPLIER VALUES('S001','Ivan Bayross',35,'Bombay');
+
+INSERT INTO SUPPLIER VALUES('S002','Nirmala Agarwal',35,'Madras');
+
+INSERT INTO SUPPLIER VALUES('S003','Susmitha',55,'Bombay');
+
+INSERT INTO SUPPLIER VALUES('S004','Basu Navindagi',45,'Bombay');
+
+INSERT INTO SUPPLIER VALUES('S005','Ravi Sreedharan',25,'Delhi');
+
+INSERT INTO SUPPLIER VALUES('S006','Nanda Gopal',25,'Madras');
+
+select * from supplier;
+
+INSERT INTO PRODUCT VALUES('P0001','12W FloodLight','Wipro',5000);
+
+INSERT INTO PRODUCT VALUES('P0002','Laptop Adapter','Dell',1560);
+
+INSERT INTO PRODUCT VALUES('P0003','Tablet','HCL',11000);
+
+INSERT INTO PRODUCT VALUES('P0004','Garnet 50W LED','Wipro',999);
+
+INSERT INTO PRODUCT VALUES('P0005','Laptop Charger','HCL',1690);
+
+SELECT * FROM PRODUCT;
+
+INSERT INTO PURCHASE VALUES('O00001','C00002','P0003',2,'20-JAN-16');
+
+INSERT INTO PURCHASE VALUES('O00002','C00003','P0002',1,'27-JAN-16');
+
+INSERT INTO PURCHASE VALUES('O00003','C00006','P0001',3,'20-FEB-16');
+
+INSERT INTO PURCHASE VALUES('O00004','C00003','P0005',4,'07-APR-16');
+
+INSERT INTO PURCHASE VALUES('O00005','C00004','P0002',2,'22-MAY-16');
+
+INSERT INTO PURCHASE VALUES('O00006','C00005','P0004',1,'26-MAY-16');
+
+SELECT * FROM PURCHASE;
+
+
+
+
+
+
+
+
+
+
