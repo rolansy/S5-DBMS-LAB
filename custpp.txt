@@ -22,6 +22,37 @@ INSERT INTO CUSTOMER VALUES('C00006','Rukmini',25,'Madras',780001,'Tamil Nadu');
 
 select * from customer;
 
+CUST_NO 	NAME		       AGE CITY 	      PINCODE
+--------------- --------------- ---------- --------------- ----------
+STATE
+---------------
+C00001		Ivan Bayross		35 Bombay	       400054
+Maharashtra
+
+C00002		Vandana Saitwal 	35 Madras	       780001
+Tamil Nadu
+
+C00003		Pramada Jaguste 	55 Bombay	       400057
+Maharashtra
+
+
+CUST_NO 	NAME		       AGE CITY 	      PINCODE
+--------------- --------------- ---------- --------------- ----------
+STATE
+---------------
+C00004		Basu Navindagi		45 Bombay	       400056
+Maharashtra
+
+C00005		Ravi Sreedharan 	25 Delhi		10001
+Delhi
+
+C00006		Rukmini 		25 Madras	       780001
+Tamil Nadu
+
+
+6 rows selected.
+
+
 INSERT INTO SUPPLIER VALUES('S001','Ivan Bayross',35,'Bombay');
 
 INSERT INTO SUPPLIER VALUES('S002','Nirmala Agarwal',35,'Madras');
@@ -36,6 +67,18 @@ INSERT INTO SUPPLIER VALUES('S006','Nanda Gopal',25,'Madras');
 
 select * from supplier;
 
+S_NO		SNAME		       AGE CITY
+--------------- --------------- ---------- ---------------
+S001		Ivan Bayross		35 Bombay
+S002		Nirmala Agarwal 	35 Madras
+S003		Susmitha		55 Bombay
+S004		Basu Navindagi		45 Bombay
+S005		Ravi Sreedharan 	25 Delhi
+S006		Nanda Gopal		25 Madras
+
+6 rows selected.
+
+
 INSERT INTO PRODUCT VALUES('P0001','12W FloodLight','Wipro',5000);
 
 INSERT INTO PRODUCT VALUES('P0002','Laptop Adapter','Dell',1560);
@@ -47,6 +90,15 @@ INSERT INTO PRODUCT VALUES('P0004','Garnet 50W LED','Wipro',999);
 INSERT INTO PRODUCT VALUES('P0005','Laptop Charger','HCL',1690);
 
 SELECT * FROM PRODUCT;
+
+PRODUCT_NO	DESCRIPTION	COMPANY 	     PRICE
+--------------- --------------- --------------- ----------
+P0001		12W FloodLight	Wipro		      5000
+P0002		Laptop Adapter	Dell		      1560
+P0003		Tablet		HCL		     11000
+P0004		Garnet 50W LED	Wipro		       999
+P0005		Laptop Charger	HCL		      1690
+
 
 INSERT INTO PURCHASE VALUES('O00001','C00002','P0003',2,'20-JAN-16');
 
@@ -61,6 +113,18 @@ INSERT INTO PURCHASE VALUES('O00005','C00004','P0002',2,'22-MAY-16');
 INSERT INTO PURCHASE VALUES('O00006','C00005','P0004',1,'26-MAY-16');
 
 SELECT * FROM PURCHASE;
+
+ORDER_NO	CUST_NO 	PROD_NO 	  QUANTITY ORDERDATE
+--------------- --------------- --------------- ---------- ------------------
+O00001		C00002		P0003			 2 20-JAN-16
+O00002		C00003		P0002			 1 27-JAN-16
+O00003		C00006		P0001			 3 20-FEB-16
+O00004		C00003		P0005			 4 07-APR-16
+O00005		C00004		P0002			 2 22-MAY-16
+O00006		C00005		P0004			 1 26-MAY-16
+
+6 rows selected.
+
 
 Select Name from CUSTOMER where city='Madras';
 
@@ -82,6 +146,47 @@ COMPANY
 ---------------
 HCL
 
+select name from customer where name not like 'R%';
+
+NAME
+---------------
+Ivan Bayross
+Vandana Saitwal
+Pramada Jaguste
+Basu Navindagi
+
+ALTER TABLE CUSTOMER ADD email VARCHAR(20);
+
+select name,age from CUSTOMER where STATE='Maharashtra' and age>40;
+
+NAME		       AGE
+--------------- ----------
+Pramada Jaguste 	55
+Basu Navindagi		45
+
+select company,price from PRODUCT order by price ;
+
+COMPANY 	     PRICE
+--------------- ----------
+Wipro		       999
+Dell		      1560
+HCL		      1690
+Wipro		      5000
+HCL		     11000
+
+select avg(age) from customer;
+
+  AVG(AGE)
+----------
+36.6666667
+
+select city,state from customer where STATE in ('Maharashtra','Tamil Nadu');
 
 
-
+CITY		STATE
+--------------- ---------------
+Bombay		Maharashtra
+Madras		Tamil Nadu
+Bombay		Maharashtra
+Bombay		Maharashtra
+Madras		Tamil Nadu
