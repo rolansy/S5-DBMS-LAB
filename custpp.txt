@@ -76,8 +76,11 @@ CUST_NO
 C00002
 C00003
 
+select company from PRODUCT where price > 5000;
 
-
+COMPANY
+---------------
+HCL
 
 
 
