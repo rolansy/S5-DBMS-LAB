@@ -126,27 +126,27 @@ O00006		C00005		P0004			 1 26-MAY-16
 6 rows selected.
 
 
-Select Name from CUSTOMER where city='Madras';
+1. SQL> Select Name from CUSTOMER where city='Madras';
 
 NAME
 ---------------
 Vandana Saitwal
 Rukmini
 
-select cust_no from PURCHASE where orderdate LIKE '___JAN___';
+2. SQL> select cust_no from PURCHASE where orderdate LIKE '___JAN___';
 
 CUST_NO
 ---------------
 C00002
 C00003
 
-select company from PRODUCT where price > 5000;
+3. SQL> select company from PRODUCT where price > 5000;
 
 COMPANY
 ---------------
 HCL
 
-select name from customer where name not like 'R%';
+4. SQL>  select name from customer where name not like 'R%';
 
 NAME
 ---------------
@@ -155,16 +155,16 @@ Vandana Saitwal
 Pramada Jaguste
 Basu Navindagi
 
-ALTER TABLE CUSTOMER ADD email VARCHAR(20);
+5. SQL> ALTER TABLE CUSTOMER ADD email VARCHAR(20);
 
-select name,age from CUSTOMER where STATE='Maharashtra' and age>40;
+6. select name,age from CUSTOMER where STATE='Maharashtra' and age>40;
 
 NAME		       AGE
 --------------- ----------
 Pramada Jaguste 	55
 Basu Navindagi		45
 
-select company,price from PRODUCT order by price ;
+7. select company,price from PRODUCT order by price ;
 
 COMPANY 	     PRICE
 --------------- ----------
@@ -174,13 +174,13 @@ HCL		      1690
 Wipro		      5000
 HCL		     11000
 
-select avg(age) from customer;
+8. select avg(age) from customer;
 
   AVG(AGE)
 ----------e table 
 36.6666667
 
-select city,state from customer where STATE in ('Maharashtra','Tamil Nadu');
+9. select city,state from customer where STATE in ('Maharashtra','Tamil Nadu');
 
 
 CITY		STATE
@@ -191,14 +191,14 @@ Bombay		Maharashtra
 Bombay		Maharashtra
 Madras		Tamil Nadu
 
-select avg(price) from PRODUCT;
+10. select avg(price) from PRODUCT;
 
 AVG(PRICE)
 ----------
     4049.8
 
 
-select cust_no,quantity from PURCHASE order by quantity;
+11. select cust_no,quantity from PURCHASE order by quantity;
 
 CUST_NO 	  QUANTITY
 --------------- ----------
@@ -209,39 +209,42 @@ C00004			 2
 C00006			 3
 C00003			 4
 
-update PURCHASE set prod_no='P0008' where cust_no='C00003';
+12. update PURCHASE set prod_no='P0008' where cust_no='C00003';
+
+2 rows updated.
 
 
-select count(*) from customer where city='Delhi';
+13. select count(*) from customer where city='Delhi';
 
   COUNT(*)
 ----------
 	 1
 
-select cust_no from PURCHASE where QUANTITY>3;
+14. select cust_no from PURCHASE where QUANTITY>3;
 
 CUST_NO
 ---------------
 C00003
 
-ALTER TABLE PURCHASE MODIFY orderdate VARCHAR(10);
+15. ALTER TABLE PURCHASE MODIFY orderdate VARCHAR(10);
 
+Table altered.
 
-select min(price),max(price) from PRODUCT;
+16. select min(price),max(price) from PRODUCT;
 
 MIN(PRICE) MAX(PRICE)
 ---------- ----------
        999	11000
 
 
-select company,count(*) from PRODUCT where company in ('Wipro','HCL') group by company;
+17. select company,count(*) from PRODUCT where company in ('Wipro','HCL') group by company;
 
 COMPANY 	  COUNT(*)
 --------------- ----------
 Wipro			 2
 HCL			 2
 
-select name from customer order by name;
+18. select name from customer order by name;
 
 NAME
 ---------------
@@ -252,7 +255,7 @@ Ravi Sreedharan
 Rukmini
 Vandana Saitwal
 
-select * from PURCHASE order by orderdate desc;
+19. select * from PURCHASE order by orderdate desc;
 
 ORDER_NO	CUST_NO 	PROD_NO 	  QUANTITY ORDERDATE
 --------------- --------------- --------------- ---------- ------------------
@@ -263,15 +266,13 @@ O00003		C00006		P0001			 3 20-FEB-16
 O00002		C00003		P0002			 1 27-JAN-16
 O00001		C00002		P0003			 2 20-JAN-16
 
-DELETE FROM PRODUCT WHERE product_no = 'P0003';
+20. DELETE FROM PRODUCT WHERE product_no = 'P0003';
 
+1 row deleted.
 
-ERROR at line 1:
-ORA-02292: integrity constraint (RONAL.SYS_C007025) violated - child record
-found
+21. CREATE TABLE PURCHASE_SUMMARY AS SELECT order_no, orderdate FROM PURCHASE;
 
-CREATE TABLE PURCHASE_SUMMARY AS SELECT order_no, orderdate FROM PURCHASE;
-
+Table created.
 
 ORDER_NO	ORDERDATE
 --------------- ------------------
@@ -282,26 +283,55 @@ O00004		07-APR-16
 O00005		22-MAY-16
 O00006		26-MAY-16
 
-drop table PURCHASE_SUMMARY;
+22. drop table PURCHASE_SUMMARY;
 
-CREATE VIEW customer_view AS SELECT * FROM customer;
+Table dropped.
 
-ERROR at line 1:
-ORA-01031: insufficient privileges
+23. CREATE VIEW customer_view AS SELECT * FROM customer;
 
-select P.cust_no,count(P.cust_no),C.Name from PURCHASE P, CUSTOMER C where P.cust_no=C.cust_no group by P.cust_no,C.NAME HAVING COUNT(P.cust_no)>1;
+View created.
+
+SQL> select * from customer_view;
+
+CUST_NO 	NAME		       AGE CITY 	      PINCODE
+--------------- --------------- ---------- --------------- ----------
+STATE		EMAIL
+--------------- --------------------
+C00001		Ivan Bayross		35 Bombay	       400054
+Maharashtra
+
+C00002		Vandana Saitwal 	35 Madras	       780001
+Tamil Nadu
+
+C00003		Pramada Jaguste 	55 Bombay	       400057
+Maharashtra
+
+
+CUST_NO 	NAME		       AGE CITY 	      PINCODE
+--------------- --------------- ---------- --------------- ----------
+STATE		EMAIL
+--------------- --------------------
+C00004		Basu Navindagi		45 Bombay	       400056
+Maharashtra
+
+C00005		Ravi Sreedharan 	25 Delhi		10001
+Delhi
+
+C00006		Rukmini 		25 Madras	       780001
+Tamil Nadu
+
+
+6 rows selected.
+
+
+24. select P.cust_no,count(P.cust_no),C.Name from PURCHASE P, CUSTOMER C where P.cust_no=C.cust_no group by P.cust_no,C.NAME HAVING COUNT(P.cust_no)>1;
 
 CUST_NO 	COUNT(P.CUST_NO) NAME
 --------------- ---------------- ---------------
 C00003			       2 Pramada Jaguste
 
 
-SELECT T1.trans_id, T1.cust_no, T1.trans_details, C1.city
-FROM TRANSACTION T1
-JOIN CUSTOMER C1 ON T1.cust_no = C1.cust_no
-JOIN CUSTOMER C2 ON C1.city = C2.city AND C1.cust_no != C2.cust_no;
-
-select C.CITY,P.ORDER_NO,P.CUST_NO FROM PURCHASE P JOIN CUSTOMER C ON P.CUST_NO=C.CUST_NO order BY C.CITY;
+25. select C.CITY,P.ORDER_NO,P.CUST_NO FROM PURCHASE P JOIN CUSTOMER C ON P.CUST_NO=C.CUST_NO order BY C.CITY;
 
 CITY		ORDER_NO	CUST_NO
 --------------- --------------- ---------------
@@ -312,14 +342,14 @@ Delhi		O00006		C00005
 Madras		O00003		C00006
 Madras		O00001		C00002
 
-SELECT NAME FROM CUSTOMER WHERE NAME LIKE 'R%';
+26. SELECT NAME FROM CUSTOMER WHERE NAME LIKE 'R%';
 
 NAME
 ---------------
 Ravi Sreedharan
 Rukmini
 
-SELECT NAME FROM CUSTOMER UNION SELECT SNAME FROM SUPPLIER;
+27. SELECT NAME FROM CUSTOMER UNION SELECT SNAME FROM SUPPLIER;
 
 NAME
 ---------------
@@ -332,4 +362,6 @@ Ravi Sreedharan
 Rukmini
 Susmitha
 Vandana Saitwal
+
+
 
