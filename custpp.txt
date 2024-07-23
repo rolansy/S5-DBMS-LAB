@@ -282,3 +282,10 @@ O00005		22-MAY-16
 O00006		26-MAY-16
 
 drop table PURCHASE_SUMMARY;
+
+CREATE VIEW customer_view AS SELECT * FROM customer;
+
+ERROR at line 1:
+ORA-01031: insufficient privileges
+
+select P.cust_no,count(P.cust_no),C.Name from PURCHASE P, CUSTOMER C where P.cust_no=C.cust_no group by P.cust_no;
