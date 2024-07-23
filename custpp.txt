@@ -16,7 +16,7 @@ INSERT INTO CUSTOMER VALUES('C00003','Pramada Jaguste',55,'Bombay',400057,'Mahar
 
 INSERT INTO CUSTOMER VALUES('C00004','Basu Navindagi',45,'Bombay',400056,'Maharashtra');
 
-INSERT INTO CUSTOMER VALUES('C00005','Ravi Sreedharan',25,'Delhi',10001,'Delhi');
+INSERT INTO CUSTOMER VALUES('C00005','Ravi Sreedharan',25,'Delhi',100001,'Delhi');
 
 INSERT INTO CUSTOMER VALUES('C00006','Rukmini',25,'Madras',780001,'Tamil Nadu');
 
@@ -177,7 +177,7 @@ HCL		     11000
 select avg(age) from customer;
 
   AVG(AGE)
-----------
+----------e table 
 36.6666667
 
 select city,state from customer where STATE in ('Maharashtra','Tamil Nadu');
@@ -265,6 +265,7 @@ O00001		C00002		P0003			 2 20-JAN-16
 
 DELETE FROM PRODUCT WHERE product_no = 'P0003';
 
+
 ERROR at line 1:
 ORA-02292: integrity constraint (RONAL.SYS_C007025) violated - child record
 found
@@ -288,4 +289,47 @@ CREATE VIEW customer_view AS SELECT * FROM customer;
 ERROR at line 1:
 ORA-01031: insufficient privileges
 
-select P.cust_no,count(P.cust_no),C.Name from PURCHASE P, CUSTOMER C where P.cust_no=C.cust_no group by P.cust_no;
+select P.cust_no,count(P.cust_no),C.Name from PURCHASE P, CUSTOMER C where P.cust_no=C.cust_no group by P.cust_no,C.NAME HAVING COUNT(P.cust_no)>1;
+
+CUST_NO 	COUNT(P.CUST_NO) NAME
+--------------- ---------------- ---------------
+C00003			       2 Pramada Jaguste
+
+
+SELECT T1.trans_id, T1.cust_no, T1.trans_details, C1.city
+FROM TRANSACTION T1
+JOIN CUSTOMER C1 ON T1.cust_no = C1.cust_no
+JOIN CUSTOMER C2 ON C1.city = C2.city AND C1.cust_no != C2.cust_no;
+
+select C.CITY,P.ORDER_NO,P.CUST_NO FROM PURCHASE P JOIN CUSTOMER C ON P.CUST_NO=C.CUST_NO order BY C.CITY;
+
+CITY		ORDER_NO	CUST_NO
+--------------- --------------- ---------------
+Bombay		O00002		C00003
+Bombay		O00005		C00004
+Bombay		O00004		C00003
+Delhi		O00006		C00005
+Madras		O00003		C00006
+Madras		O00001		C00002
+
+SELECT NAME FROM CUSTOMER WHERE NAME LIKE 'R%';
+
+NAME
+---------------
+Ravi Sreedharan
+Rukmini
+
+SELECT NAME FROM CUSTOMER UNION SELECT SNAME FROM SUPPLIER;
+
+NAME
+---------------
+Basu Navindagi
+Ivan Bayross
+Nanda Gopal
+Nirmala Agarwal
+Pramada Jaguste
+Ravi Sreedharan
+Rukmini
+Susmitha
+Vandana Saitwal
+
