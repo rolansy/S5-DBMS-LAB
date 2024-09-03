@@ -7,29 +7,33 @@ DECLARE
         WHERE (s1 + s2) > 12
         ORDER BY rollno;
 
-    v_rollno std_honors.rollno%TYPE;
-    v_name std_honors.name%TYPE;
-    v_s1 std_honors.s1%TYPE;
-    v_s2 std_honors.s2%TYPE;
-    v_highest_grade NUMBER := 0;
+    roll std_honors.rollno%TYPE;
+    sname std_honors.name%TYPE;
+    s1m std_honors.s1%TYPE;
+    s2m std_honors.s2%TYPE;
+    tot NUMBER;
+    maxs NUMBER := 0;
 
 BEGIN
     OPEN honor_students_cursor;
     DBMS_OUTPUT.PUT_LINE('Students ELigible for honors : ');
     LOOP
-        FETCH honor_students_cursor INTO v_rollno, v_name, v_s1, v_s2;
+        FETCH honor_students_cursor INTO roll, sname, s1m, s2m;
         
         EXIT WHEN honor_students_cursor%NOTFOUND;
         
-        DBMS_OUTPUT.PUT_LINE('Roll No: ' || v_rollno || ', Name: ' || v_name || ', S1: ' || v_s1 || ', S2: ' || v_s2);
-        IF v_s1 > v_highest_grade THEN
-            v_highest_grade := v_s1;
+        DBMS_OUTPUT.PUT_LINE('Roll No: ' || roll || ', Name: ' || sname || ', S1: ' || s1m || ', S2: ' || s2m);
+        tot:=s1m+s2m;
+        DBMS_OUTPUT.PUT_LINE('Total Marks : '|| tot);
+
+        IF s1m > maxs THEN
+            maxs := s1m;
         END IF;
 
     END LOOP;
 
     CLOSE honor_students_cursor;
-
-    DBMS_OUTPUT.PUT_LINE('Highest grade obtained in the previous semester for honor students: ' || v_highest_grade);
+    DBMS_OUTPUT.PUT_LINE('.');
+    DBMS_OUTPUT.PUT_LINE('Highest grade obtained in the previous semester for honor students: ' || maxs);
 END;
 /
