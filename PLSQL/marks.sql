@@ -1,6 +1,6 @@
-SET SERVEROUTPUT ON
+SET SERVEROUTPUT ON 
 
-DECLARE
+DECLARE 
     avg_marks NUMBER(10);
     cdate DATE;
     cweek varchar2(10); 
@@ -15,7 +15,7 @@ BEGIN
     END if;
     cdate := SYSDATE;
     DBMS_OUTPUT.PUT_LINE('Current Date : '||cdate);
-    cweek := TO_CHAR(cdate,'DAY');
+    cweek := TO_CHAR(cdate,'DAY');  
     DBMS_OUTPUT.PUT_LINE('Current Day : '||cweek);
 END;
 /
