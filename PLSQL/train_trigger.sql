@@ -5,3 +5,4 @@ BEGIN
     SELECT TrainNo_seq.NEXTVAL INTO :NEW.TrainNo FROM dual;
 END;
 /
+
