@@ -1,43 +1,10 @@
-# Customer Balance Categorization
 
-This repository contains PL/SQL scripts to categorize customers based on their balance in the `customer_balance` table. The categorization is done using a stored procedure that updates the category of each customer based on their balance.
+# PL/SQL Scripts Repository
 
-## Repository Contents
+Welcome to the PL/SQL Scripts Repository! This repository contains a collection of PL/SQL scripts designed to be run on SQL*Plus. These scripts cover various use cases and scenarios, making it a valuable resource for anyone working with PL/SQL.
 
-| File/Directory                  | Description                                                                 |
-|---------------------------------|-----------------------------------------------------------------------------|
-| `README.md`                     | This file, providing an overview and documentation for the repository.      |
-| `customer_relations.sql`        | SQL script for managing customer relations and sales data.                  |
-| `deptemp.sql`                   | SQL script for department and employee management.                          |
-| `custpp.sql`                    | SQL script for customer-related operations.                                 |
-| `Nested and Correlated.sql`     | SQL script containing nested and correlated subqueries.                     |
-| `queries.odt`                   | Document containing various SQL queries.                                    |
-| `PLSQL/`                        | Directory containing PL/SQL scripts.                                        |
+## Directory Structure
 
-## PLSQL Directory Contents
-
-| File                          | Description                                                                 |
-|-------------------------------|-----------------------------------------------------------------------------|
-| `bank.sql`                    | PL/SQL script for bank-related operations.                                  |
-| `customer_category.sql`       | Script to categorize customers into 'Silver', 'Gold', or 'Platinum' based on their balance. |
-| `DBS/`                        | Subdirectory containing scripts for table creation.                         |
-| `exitloop.sql`                | PL/SQL script demonstrating the use of exit loops.                          |
-| `marks.sql`                   | PL/SQL script for managing student marks.                                   |
-| `pl.sql`                      | General PL/SQL script for various operations.                               |
-
-## DBS Directory Contents
-
-| File                          | Description                                                                 |
-|-------------------------------|-----------------------------------------------------------------------------|
-| `accounts.sql`                | SQL script for creating and managing accounts table.                        |
-| `customer_balance.sql`        | SQL script for creating and managing customer balance table.                |
-| `students.sql`                | SQL script for creating and managing students table.                        |
-
-# Customer Balance Categorization
-
-This repository contains various SQL and PL/SQL scripts for managing customer relations, department and employee data, and categorizing customers based on their balance.
-
-## Repository Contents
 
 ```plaintext
 .
@@ -53,46 +20,80 @@ This repository contains various SQL and PL/SQL scripts for managing customer re
     ├── DBS
     │   ├── accounts.sql
     │   ├── customer_balance.sql
-    │   └── students.sql
+    │   ├── electricity_charge.sql
+    │   ├── railway.sql
+    │   ├── std_honors.sql
+    │   ├── student_avg.sql
+    │   ├── students.sql
+    │   └── train.sql
+    ├── electricity_bill.sql
     ├── exitloop.sql
     ├── marks.sql
-    └── pl.sql
+    ├── pl.sql
+    ├── railway_reservation.sql
+    ├── student_honors.sql
+    ├── student_trigger.sql
+    ├── train_trigger.sql
+    └── trigger.sql
 ```
 
-File Descriptions
-Root Directory
-README.md: This file, providing an overview and documentation for the repository.
-customer_relations.sql: SQL script for managing customer relations and sales data. Includes updates and queries for salesmen and their sales amounts.
-deptemp.sql: SQL script for department and employee management, including creation and manipulation of department and employee tables.
-custpp.sql: SQL script for customer-related operations, including procedures and functions for managing customer data.
-Nested and Correlated.sql: SQL script containing nested and correlated subqueries for complex data retrieval.
-queries.odt: Document containing various SQL queries for different operations and data retrieval.
-PLSQL Directory
-bank.sql: PL/SQL script for bank-related operations, including procedures and functions for managing bank accounts and transactions.
-customer_category.sql: Script to categorize customers into 'Silver', 'Gold', or 'Platinum' based on their balance. Includes a procedure to update the category and loops through each customer to apply the categorization.
-DBS/: Subdirectory containing scripts for table creation.
-accounts.sql: SQL script for creating and managing the accounts table.
-customer_balance.sql: SQL script for creating and managing the customer balance table.
-students.sql: SQL script for creating and managing the students table.
-exitloop.sql: PL/SQL script demonstrating the use of exit loops, including examples of loop control and exit conditions.
-marks.sql: PL/SQL script for managing student marks, including procedures for calculating and updating student grades.
-pl.sql: General PL/SQL script for various operations, including examples of PL/SQL blocks, procedures, and functions.
-Description of customer_category.sql
-The customer_category.sql script contains the following key components:
 
-Procedure categorize_customer:
+## Main Directory
 
-Input Parameters: CID (Customer ID), bal (Balance).
-Logic:
-If bal <= 10,000, set Category to 'Silver'.
-If bal <= 50,000, set Category to 'Gold'.
-Otherwise, set Category to 'Platinum'.
-Updates: The Category column in the customer_balance table based on the balance.
-Main Block:
+| File | Description |
+|------|-------------|
+| [Nested and Correlated.sql](PLSQL/Nested%20and%20Correlated.sql) | Script demonstrating nested and correlated subqueries. |
+| [README.md](PLSQL/README.md) | This README file. |
+| [customer_relations.sql](PLSQL/customer_relations.sql) | Script for managing customer relations. |
+| [custpp.sql](PLSQL/custpp.sql) | Customer-related stored procedures and functions. |
+| [deptemp.sql](PLSQL/deptemp.sql) | Script for department and employee management. |
+| [queries.odt](PLSQL/queries.odt) | Document containing various SQL queries. |
 
-Loop: Iterates through each row in the customer_balance table.
-Procedure Call: Calls categorize_customer for each customer.
-Output: Prints the CID, bal, and Category for each customer after categorization.
+## PLSQL Directory
+
+| File | Description |
+|------|-------------|
+| [DBS/](PLSQL/DBS) | Directory containing database scripts. |
+| [bank.sql](PLSQL/DBS/bank.sql) | Script for banking operations. |
+| [customer_category.sql](PLSQL/DBS/customer_category.sql) | Script for categorizing customers. |
+| [electricity_bill.sql](PLSQL/DBS/electricity_bill.sql) | Script for managing electricity bills. |
+| [exitloop.sql](PLSQL/DBS/exitloop.sql) | Example of using exit loops in PL/SQL. |
+| [marks.sql](PLSQL/DBS/marks.sql) | Script for managing student marks. |
+| [pl.sql](PLSQL/DBS/pl.sql) | General PL/SQL script. |
+| [railway_reservation.sql](PLSQL/DBS/railway_reservation.sql) | Script for railway reservation system. |
+| [student_honors.sql](PLSQL/DBS/student_honors.sql) | Script for managing student honors. |
+| [student_trigger.sql](PLSQL/DBS/student_trigger.sql) | Trigger for student-related operations. |
+| [train_trigger.sql](PLSQL/DBS/train_trigger.sql) | Trigger for train-related operations. |
+| [trigger.sql](PLSQL/DBS/trigger.sql) | General trigger script. |
+
+## PLSQL/DBS Directory
+
+| File | Description |
+|------|-------------|
+| [accounts.sql](PLSQL/DBS/accounts.sql) | Script for managing accounts. |
+| [customer_balance.sql](PLSQL/DBS/customer_balance.sql) | Script for managing customer balances. |
+| [electricity_charge.sql](PLSQL/DBS/electricity_charge.sql) | Script for managing electricity charges. |
+| [railway.sql](PLSQL/DBS/railway.sql) | General railway management script. |
+| [std_honors.sql](PLSQL/DBS/std_honors.sql) | Script for student honors. |
+| [student_avg.sql](PLSQL/DBS/student_avg.sql) | Script for calculating student averages. |
+| [students.sql](PLSQL/DBS/students.sql) | Script for managing student information. |
+| [train.sql](PLSQL/DBS/train.sql) | Script for managing train information. |
+
+## Usage Instructions
+
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/yourusername/plsql-scripts.git
+    ```
+2. Navigate to the desired directory:
+    ```sh
+    cd plsql-scripts/PLSQL
+    ```
+3. Run the scripts using SQL*Plus:
+    ```sh
+    sqlplus username/password@database @scriptname.sql
+    ```
+    
 Example Usage
 To run the script, execute the following command in your SQL environment:
 ```sql
@@ -113,32 +114,12 @@ Commit your changes (git commit -am 'Add new feature').
 Push to the branch (git push origin feature-branch).
 Create a new Pull Request.
 
-## Description of `customer_category.sql`
+## Contributing
 
-The `customer_category.sql` script contains the following key components:
-
-1. **Procedure `categorize_customer`**:
-    - **Input Parameters**: `CID` (Customer ID), `bal` (Balance).
-    - **Logic**:
-        - If `bal` <= 10,000, set `Category` to 'Silver'.
-        - If `bal` <= 50,000, set `Category` to 'Gold'.
-        - Otherwise, set `Category` to 'Platinum'.
-    - **Updates**: The `Category` column in the `customer_balance` table based on the balance.
-
-2. **Main Block**:
-    - **Loop**: Iterates through each row in the `customer_balance` table.
-    - **Procedure Call**: Calls `categorize_customer` for each customer.
-    - **Output**: Prints the `CID`, `bal`, and `Category` for each customer after categorization.
-
-### Example Usage
-
-To run the script, execute the following command in your SQL environment:
-
-```sql
-@PLSQL/customer_category.sql
-```
+We welcome contributions! Please read our [Contributing Guidelines](CONTRIBUTING.md) for more details.
 
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 This README provides a clear and organized overview of the repository, including a tree structure for the folders and detailed descriptions for each SQL file. It also includes instructions on how to run the customer_category.sql script and sample output to illustrate its functionality.
