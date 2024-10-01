@@ -45,6 +45,11 @@ BEGIN
 END;
 /
 BEGIN
-    CancelReservation(p_ResID => 1);
+    MakeReservation(p_TrainNo => 27, p_PassengerName => 'Jacob Thomas', p_SeatNo => 5);
+END;
+/
+
+BEGIN
+    CancelReservation(p_ResID => 7);
 END;
 /
