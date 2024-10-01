@@ -16,6 +16,10 @@ INSERT INTO std_honors VALUES (58, 'Hannah', 88, 90);
 INSERT INTO std_honors VALUES (59, 'Ivy', 32, 94);
 INSERT INTO std_honors VALUES (510, 'Jack', 70, 5);
 
+INSERT INTO std_honors VALUES (511, 'Katie', 75, 69);
+UPDATE std_honors SET s1 = 80, s2 = 75 WHERE rollno = 511;
+DELETE FROM std_honors WHERE rollno = 511;
+
 SQL> select * from std_honors;
 
     ROLLNO NAME 				  S1	     S2
@@ -33,4 +37,21 @@ SQL> select * from std_honors;
 
 10 rows selected.
 
+SQL> @PLSQL/trigger
 
+Trigger created.
+
+SQL> DELETE FROM std_honors WHERE rollno = 511;
+Deleting Katie
+
+1 row deleted.
+
+SQL> INSERT INTO std_honors VALUES (511, 'Katie', 75, 69);
+Inserting Katie
+
+1 row created.
+
+SQL> UPDATE std_honors SET s1 = 80, s2 = 75 WHERE rollno = 511;
+Updated  Katie
+
+1 row updated.
