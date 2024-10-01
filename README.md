@@ -1,7 +1,7 @@
 
-# PL/SQL Scripts Repository
+# S5-DBMS-LAB PL/SQL Repository
 
-Welcome to the PL/SQL Scripts Repository! This repository contains a collection of PL/SQL scripts designed to be run on SQL*Plus. These scripts cover various use cases and scenarios, making it a valuable resource for anyone working with PL/SQL.
+Welcome to the S5 DBMS LAB Repository! This repository contains a collection of PL/SQL scripts designed to be run on SQL*Plus. These scripts cover various use cases and scenarios, making it a valuable resource for anyone working with PL/SQL.
 
 ## Directory Structure
 
