@@ -41,6 +41,10 @@ END;
 /
 
 BEGIN
+    MakeReservation(p_TrainNo => 28, p_PassengerName => 'Jane Doe', p_SeatNo => 2);
+END;
+/
+BEGIN
     CancelReservation(p_ResID => 1);
 END;
 /
