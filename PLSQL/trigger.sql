@@ -9,7 +9,7 @@ BEGIN
     ELSIF INSERTING THEN
         v_message := 'Inserting ' || :NEW.name;
     ELSIF UPDATING THEN
-        IF :NEW.name == :OLD.name THEN
+        IF :NEW.name = :OLD.name THEN
             v_message := 'Updated  ' || :NEW.name;
         ELSE
             v_message := 'Inserting ' || :NEW.name;
