@@ -1,0 +1,251 @@
+<svg width="1204" height="844" viewBox="0 0 903 633" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="translate(4,512) scale(1)">
+<title>G</title>
+<polygon fill="transparent" stroke="transparent" points="-4,4 -4,-512 861,-512 861,4 -4,4"></polygon>
+<!-- Categories -->
+<g id="node1" class="node">
+<title>Categories</title>
+<polygon fill="#232d95" stroke="transparent" points="599,-342 599,-360 857,-360 857,-342 599,-342"></polygon>
+<polygon fill="none" stroke="white" points="599,-342 599,-360 857,-360 857,-342 599,-342"></polygon>
+<text text-anchor="start" x="602" y="-349" font-family="opensans" font-weight="bold" font-size="10.00" fill="white">Categories</text>
+<polygon fill="#404040" stroke="transparent" points="599,-324 599,-342 857,-342 857,-324 599,-324"></polygon>
+<polygon fill="none" stroke="white" points="599,-324 599,-342 857,-342 857,-324 599,-324"></polygon>
+<text text-anchor="start" x="602" y="-331" font-family="opensans" font-size="10.00" fill="#e2c044">PK </text>
+<text text-anchor="start" x="617.28" y="-331" font-family="opensans" font-size="10.00"> | </text>
+<text text-anchor="start" x="624.28" y="-331" font-family="opensans" font-size="10.00" fill="white"> category_id INT &#160;AUTO_INCREMENT</text>
+<polygon fill="#404040" stroke="transparent" points="599,-306 599,-324 857,-324 857,-306 599,-306"></polygon>
+<polygon fill="none" stroke="white" points="599,-306 599,-324 857,-324 857,-306 599,-306"></polygon>
+<text text-anchor="start" x="601.93" y="-312" font-family="opensans" font-size="10.00" fill="white"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;category_name VARCHAR(100) NOT NULL UNIQUE</text>
+</g>
+<!-- Books -->
+<g id="node2" class="node">
+<title>Books</title>
+<polygon fill="#232d95" stroke="transparent" points="326,-396 326,-414 534,-414 534,-396 326,-396"></polygon>
+<polygon fill="none" stroke="white" points="326,-396 326,-414 534,-414 534,-396 326,-396"></polygon>
+<text text-anchor="start" x="329" y="-403" font-family="opensans" font-weight="bold" font-size="10.00" fill="white">Books</text>
+<polygon fill="#404040" stroke="transparent" points="326,-378 326,-396 534,-396 534,-378 326,-378"></polygon>
+<polygon fill="none" stroke="white" points="326,-378 326,-396 534,-396 534,-378 326,-378"></polygon>
+<text text-anchor="start" x="329" y="-385" font-family="opensans" font-size="10.00" fill="#e2c044">PK </text>
+<text text-anchor="start" x="344.28" y="-385" font-family="opensans" font-size="10.00"> | </text>
+<text text-anchor="start" x="351.28" y="-385" font-family="opensans" font-size="10.00" fill="white"> book_id INT &#160;AUTO_INCREMENT</text>
+<polygon fill="#404040" stroke="transparent" points="326,-360 326,-378 534,-378 534,-360 326,-360"></polygon>
+<polygon fill="none" stroke="white" points="326,-360 326,-378 534,-378 534,-360 326,-360"></polygon>
+<text text-anchor="start" x="329" y="-366" font-family="opensans" font-size="10.00" fill="white"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;title VARCHAR(255) NOT NULL</text>
+<polygon fill="#404040" stroke="transparent" points="326,-342 326,-360 534,-360 534,-342 326,-342"></polygon>
+<polygon fill="none" stroke="white" points="326,-342 326,-360 534,-360 534,-342 326,-342"></polygon>
+<text text-anchor="start" x="328.64" y="-348" font-family="opensans" font-size="10.00" fill="white"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;isbn VARCHAR(13) NOT NULL UNIQUE</text>
+<polygon fill="#404040" stroke="transparent" points="326,-324 326,-342 534,-342 534,-324 326,-324"></polygon>
+<polygon fill="none" stroke="white" points="326,-324 326,-342 534,-342 534,-324 326,-324"></polygon>
+<text text-anchor="start" x="329" y="-331" font-family="opensans" font-size="10.00" fill="#e2c044">FK </text>
+<text text-anchor="start" x="344.28" y="-331" font-family="opensans" font-size="10.00"> | </text>
+<text text-anchor="start" x="351.28" y="-331" font-family="opensans" font-size="10.00" fill="white"> category_id INT</text>
+<polygon fill="#404040" stroke="transparent" points="326,-306 326,-324 534,-324 534,-306 326,-306"></polygon>
+<polygon fill="none" stroke="white" points="326,-306 326,-324 534,-324 534,-306 326,-306"></polygon>
+<text text-anchor="start" x="329" y="-312" font-family="opensans" font-size="10.00" fill="white"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;copies_available INT DEFAULT 1</text>
+<polygon fill="#404040" stroke="transparent" points="326,-288 326,-306 534,-306 534,-288 326,-288"></polygon>
+<polygon fill="none" stroke="white" points="326,-288 326,-306 534,-306 534,-288 326,-288"></polygon>
+<text text-anchor="start" x="329" y="-294" font-family="opensans" font-size="10.00" fill="white"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;published_year YEAR</text>
+<polygon fill="#404040" stroke="transparent" points="326,-270 326,-288 534,-288 534,-270 326,-270"></polygon>
+<polygon fill="none" stroke="white" points="326,-270 326,-288 534,-288 534,-270 326,-270"></polygon>
+<text text-anchor="start" x="329" y="-276" font-family="opensans" font-size="10.00" fill="white"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;publisher VARCHAR(255)</text>
+</g>
+<!-- Books&#45;&gt;Categories -->
+<g id="edge1" class="edge">
+<title>Books:category_id-&gt;Categories:category_id</title>
+<path fill="none" stroke="#5ea54a" d="M535,-333C559.78,-333 568.37,-333 588.97,-333"></path>
+<polygon fill="#5ea54a" stroke="#5ea54a" points="589,-336.5 599,-333 589,-329.5 589,-336.5"></polygon>
+</g>
+<!-- Members -->
+<g id="node3" class="node">
+<title>Members</title>
+<polygon fill="#232d95" stroke="transparent" points="297,-234 297,-252 563,-252 563,-234 297,-234"></polygon>
+<polygon fill="none" stroke="white" points="297,-234 297,-252 563,-252 563,-234 297,-234"></polygon>
+<text text-anchor="start" x="300" y="-241" font-family="opensans" font-weight="bold" font-size="10.00" fill="white">Members</text>
+<polygon fill="#404040" stroke="transparent" points="297,-216 297,-234 563,-234 563,-216 297,-216"></polygon>
+<polygon fill="none" stroke="white" points="297,-216 297,-234 563,-234 563,-216 297,-216"></polygon>
+<text text-anchor="start" x="300" y="-223" font-family="opensans" font-size="10.00" fill="#e2c044">PK </text>
+<text text-anchor="start" x="315.28" y="-223" font-family="opensans" font-size="10.00"> | </text>
+<text text-anchor="start" x="322.28" y="-223" font-family="opensans" font-size="10.00" fill="white"> member_id INT &#160;AUTO_INCREMENT</text>
+<polygon fill="#404040" stroke="transparent" points="297,-198 297,-216 563,-216 563,-198 297,-198"></polygon>
+<polygon fill="none" stroke="white" points="297,-198 297,-216 563,-216 563,-198 297,-198"></polygon>
+<text text-anchor="start" x="300" y="-204" font-family="opensans" font-size="10.00" fill="white"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;name VARCHAR(255) NOT NULL</text>
+<polygon fill="#404040" stroke="transparent" points="297,-180 297,-198 563,-198 563,-180 297,-180"></polygon>
+<polygon fill="none" stroke="white" points="297,-180 297,-198 563,-198 563,-180 297,-180"></polygon>
+<text text-anchor="start" x="300" y="-186" font-family="opensans" font-size="10.00" fill="white"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;email VARCHAR(255) NOT NULL UNIQUE</text>
+<polygon fill="#404040" stroke="transparent" points="297,-162 297,-180 563,-180 563,-162 297,-162"></polygon>
+<polygon fill="none" stroke="white" points="297,-162 297,-180 563,-180 563,-162 297,-162"></polygon>
+<text text-anchor="start" x="300" y="-168" font-family="opensans" font-size="10.00" fill="white"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;phone VARCHAR(15)</text>
+<polygon fill="#404040" stroke="transparent" points="297,-144 297,-162 563,-162 563,-144 297,-144"></polygon>
+<polygon fill="none" stroke="white" points="297,-144 297,-162 563,-162 563,-144 297,-144"></polygon>
+<text text-anchor="start" x="300" y="-150" font-family="opensans" font-size="10.00" fill="white"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;address TEXT</text>
+<polygon fill="#404040" stroke="transparent" points="297,-126 297,-144 563,-144 563,-126 297,-126"></polygon>
+<polygon fill="none" stroke="white" points="297,-126 297,-144 563,-144 563,-126 297,-126"></polygon>
+<text text-anchor="start" x="299.62" y="-132" font-family="opensans" font-size="10.00" fill="white"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;membership_date DATE DEFAULT (CURRENT_DATE)</text>
+</g>
+<!-- Librarians -->
+<g id="node4" class="node">
+<title>Librarians</title>
+<polygon fill="#232d95" stroke="transparent" points="314,-90 314,-108 546,-108 546,-90 314,-90"></polygon>
+<polygon fill="none" stroke="white" points="314,-90 314,-108 546,-108 546,-90 314,-90"></polygon>
+<text text-anchor="start" x="317" y="-97" font-family="opensans" font-weight="bold" font-size="10.00" fill="white">Librarians</text>
+<polygon fill="#404040" stroke="transparent" points="314,-72 314,-90 546,-90 546,-72 314,-72"></polygon>
+<polygon fill="none" stroke="white" points="314,-72 314,-90 546,-90 546,-72 314,-72"></polygon>
+<text text-anchor="start" x="317" y="-79" font-family="opensans" font-size="10.00" fill="#e2c044">PK </text>
+<text text-anchor="start" x="332.28" y="-79" font-family="opensans" font-size="10.00"> | </text>
+<text text-anchor="start" x="339.28" y="-79" font-family="opensans" font-size="10.00" fill="white"> librarian_id INT &#160;AUTO_INCREMENT</text>
+<polygon fill="#404040" stroke="transparent" points="314,-54 314,-72 546,-72 546,-54 314,-54"></polygon>
+<polygon fill="none" stroke="white" points="314,-54 314,-72 546,-72 546,-54 314,-54"></polygon>
+<text text-anchor="start" x="317" y="-60" font-family="opensans" font-size="10.00" fill="white"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;name VARCHAR(255) NOT NULL</text>
+<polygon fill="#404040" stroke="transparent" points="314,-36 314,-54 546,-54 546,-36 314,-36"></polygon>
+<polygon fill="none" stroke="white" points="314,-36 314,-54 546,-54 546,-36 314,-36"></polygon>
+<text text-anchor="start" x="317" y="-42" font-family="opensans" font-size="10.00" fill="white"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;email VARCHAR(255) NOT NULL UNIQUE</text>
+<polygon fill="#404040" stroke="transparent" points="314,-18 314,-36 546,-36 546,-18 314,-18"></polygon>
+<polygon fill="none" stroke="white" points="314,-18 314,-36 546,-36 546,-18 314,-18"></polygon>
+<text text-anchor="start" x="317" y="-24" font-family="opensans" font-size="10.00" fill="white"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;phone VARCHAR(15)</text>
+<polygon fill="#404040" stroke="transparent" points="314,0 314,-18 546,-18 546,0 314,0"></polygon>
+<polygon fill="none" stroke="white" points="314,0 314,-18 546,-18 546,0 314,0"></polygon>
+<text text-anchor="start" x="316.56" y="-6" font-family="opensans" font-size="10.00" fill="white"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;hire_date DATE DEFAULT (CURRENT_DATE)</text>
+</g>
+<!-- Authors -->
+<g id="node5" class="node">
+<title>Authors</title>
+<polygon fill="#232d95" stroke="transparent" points="338,-486 338,-504 522,-504 522,-486 338,-486"></polygon>
+<polygon fill="none" stroke="white" points="338,-486 338,-504 522,-504 522,-486 338,-486"></polygon>
+<text text-anchor="start" x="341" y="-493" font-family="opensans" font-weight="bold" font-size="10.00" fill="white">Authors</text>
+<polygon fill="#404040" stroke="transparent" points="338,-468 338,-486 522,-486 522,-468 338,-468"></polygon>
+<polygon fill="none" stroke="white" points="338,-468 338,-486 522,-486 522,-468 338,-468"></polygon>
+<text text-anchor="start" x="340.83" y="-475" font-family="opensans" font-size="10.00" fill="#e2c044">PK </text>
+<text text-anchor="start" x="356.1" y="-475" font-family="opensans" font-size="10.00"> | </text>
+<text text-anchor="start" x="363.1" y="-475" font-family="opensans" font-size="10.00" fill="white"> author_id INT &#160;AUTO_INCREMENT</text>
+<polygon fill="#404040" stroke="transparent" points="338,-450 338,-468 522,-468 522,-450 338,-450"></polygon>
+<polygon fill="none" stroke="white" points="338,-450 338,-468 522,-468 522,-450 338,-450"></polygon>
+<text text-anchor="start" x="341" y="-456" font-family="opensans" font-size="10.00" fill="white"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;name VARCHAR(255) NOT NULL</text>
+<polygon fill="#404040" stroke="transparent" points="338,-432 338,-450 522,-450 522,-432 338,-432"></polygon>
+<polygon fill="none" stroke="white" points="338,-432 338,-450 522,-450 522,-432 338,-432"></polygon>
+<text text-anchor="start" x="341" y="-438" font-family="opensans" font-size="10.00" fill="white"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bio TEXT</text>
+</g>
+<!-- Book_Authors -->
+<g id="node6" class="node">
+<title>Book_Authors</title>
+<polygon fill="#232d95" stroke="transparent" points="86.5,-490 86.5,-508 174.5,-508 174.5,-490 86.5,-490"></polygon>
+<polygon fill="none" stroke="white" points="86.5,-490 86.5,-508 174.5,-508 174.5,-490 86.5,-490"></polygon>
+<text text-anchor="start" x="89.5" y="-497" font-family="opensans" font-weight="bold" font-size="10.00" fill="white">Book_Authors</text>
+<polygon fill="#404040" stroke="transparent" points="86.5,-472 86.5,-490 174.5,-490 174.5,-472 86.5,-472"></polygon>
+<polygon fill="none" stroke="white" points="86.5,-472 86.5,-490 174.5,-490 174.5,-472 86.5,-472"></polygon>
+<text text-anchor="start" x="89.5" y="-479" font-family="opensans" font-size="10.00" fill="#e2c044">FK </text>
+<text text-anchor="start" x="104.78" y="-479" font-family="opensans" font-size="10.00"> | </text>
+<text text-anchor="start" x="111.78" y="-479" font-family="opensans" font-size="10.00" fill="white"> book_id INT</text>
+<polygon fill="#404040" stroke="transparent" points="86.5,-454 86.5,-472 174.5,-472 174.5,-454 86.5,-454"></polygon>
+<polygon fill="none" stroke="white" points="86.5,-454 86.5,-472 174.5,-472 174.5,-454 86.5,-454"></polygon>
+<text text-anchor="start" x="89.37" y="-461" font-family="opensans" font-size="10.00" fill="#e2c044">FK </text>
+<text text-anchor="start" x="104.65" y="-461" font-family="opensans" font-size="10.00"> | </text>
+<text text-anchor="start" x="111.65" y="-461" font-family="opensans" font-size="10.00" fill="white"> author_id INT</text>
+</g>
+<!-- Book_Authors&#45;&gt;Books -->
+<g id="edge2" class="edge">
+<title>Book_Authors:book_id-&gt;Books:book_id</title>
+<path fill="none" stroke="#5ea54a" d="M175.5,-481C219.3,-481 224.05,-455.51 261,-432 287.13,-415.38 289.9,-392.67 314.76,-387.9"></path>
+<polygon fill="#5ea54a" stroke="#5ea54a" points="315.35,-391.36 325,-387 314.73,-384.39 315.35,-391.36"></polygon>
+</g>
+<!-- Book_Authors&#45;&gt;Authors -->
+<g id="edge3" class="edge">
+<title>Book_Authors:author_id-&gt;Authors:author_id</title>
+<path fill="none" stroke="#5ea54a" d="M175.5,-463C244.03,-463 263.12,-475.67 326.82,-476.9"></path>
+<polygon fill="#5ea54a" stroke="#5ea54a" points="326.97,-480.4 337,-477 327.03,-473.4 326.97,-480.4"></polygon>
+</g>
+<!-- Loans -->
+<g id="node7" class="node">
+<title>Loans</title>
+<polygon fill="#232d95" stroke="transparent" points="13.5,-270 13.5,-288 247.5,-288 247.5,-270 13.5,-270"></polygon>
+<polygon fill="none" stroke="white" points="13.5,-270 13.5,-288 247.5,-288 247.5,-270 13.5,-270"></polygon>
+<text text-anchor="start" x="16.5" y="-277" font-family="opensans" font-weight="bold" font-size="10.00" fill="white">Loans</text>
+<polygon fill="#404040" stroke="transparent" points="13.5,-252 13.5,-270 247.5,-270 247.5,-252 13.5,-252"></polygon>
+<polygon fill="none" stroke="white" points="13.5,-252 13.5,-270 247.5,-270 247.5,-252 13.5,-252"></polygon>
+<text text-anchor="start" x="16.5" y="-259" font-family="opensans" font-size="10.00" fill="#e2c044">PK </text>
+<text text-anchor="start" x="31.78" y="-259" font-family="opensans" font-size="10.00"> | </text>
+<text text-anchor="start" x="38.78" y="-259" font-family="opensans" font-size="10.00" fill="white"> loan_id INT &#160;AUTO_INCREMENT</text>
+<polygon fill="#404040" stroke="transparent" points="13.5,-234 13.5,-252 247.5,-252 247.5,-234 13.5,-234"></polygon>
+<polygon fill="none" stroke="white" points="13.5,-234 13.5,-252 247.5,-252 247.5,-234 13.5,-234"></polygon>
+<text text-anchor="start" x="16.5" y="-241" font-family="opensans" font-size="10.00" fill="#e2c044">FK </text>
+<text text-anchor="start" x="31.78" y="-241" font-family="opensans" font-size="10.00"> | </text>
+<text text-anchor="start" x="38.78" y="-241" font-family="opensans" font-size="10.00" fill="white"> book_id INT</text>
+<polygon fill="#404040" stroke="transparent" points="13.5,-216 13.5,-234 247.5,-234 247.5,-216 13.5,-216"></polygon>
+<polygon fill="none" stroke="white" points="13.5,-216 13.5,-234 247.5,-234 247.5,-216 13.5,-216"></polygon>
+<text text-anchor="start" x="16.5" y="-223" font-family="opensans" font-size="10.00" fill="#e2c044">FK </text>
+<text text-anchor="start" x="31.78" y="-223" font-family="opensans" font-size="10.00"> | </text>
+<text text-anchor="start" x="38.78" y="-223" font-family="opensans" font-size="10.00" fill="white"> member_id INT</text>
+<polygon fill="#404040" stroke="transparent" points="13.5,-198 13.5,-216 247.5,-216 247.5,-198 13.5,-198"></polygon>
+<polygon fill="none" stroke="white" points="13.5,-198 13.5,-216 247.5,-216 247.5,-198 13.5,-198"></polygon>
+<text text-anchor="start" x="16.22" y="-204" font-family="opensans" font-size="10.00" fill="white"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;loan_date DATE DEFAULT (CURRENT_DATE)</text>
+<polygon fill="#404040" stroke="transparent" points="13.5,-180 13.5,-198 247.5,-198 247.5,-180 13.5,-180"></polygon>
+<polygon fill="none" stroke="white" points="13.5,-180 13.5,-198 247.5,-198 247.5,-180 13.5,-180"></polygon>
+<text text-anchor="start" x="16.5" y="-186" font-family="opensans" font-size="10.00" fill="white"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;due_date DATE NOT NULL</text>
+<polygon fill="#404040" stroke="transparent" points="13.5,-162 13.5,-180 247.5,-180 247.5,-162 13.5,-162"></polygon>
+<polygon fill="none" stroke="white" points="13.5,-162 13.5,-180 247.5,-180 247.5,-162 13.5,-162"></polygon>
+<text text-anchor="start" x="16.5" y="-168" font-family="opensans" font-size="10.00" fill="white"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;return_date DATE</text>
+<polygon fill="#404040" stroke="transparent" points="13.5,-144 13.5,-162 247.5,-162 247.5,-144 13.5,-144"></polygon>
+<polygon fill="none" stroke="white" points="13.5,-144 13.5,-162 247.5,-162 247.5,-144 13.5,-144"></polygon>
+<text text-anchor="start" x="16.5" y="-151" font-family="opensans" font-size="10.00" fill="#e2c044">FK </text>
+<text text-anchor="start" x="31.78" y="-151" font-family="opensans" font-size="10.00"> | </text>
+<text text-anchor="start" x="38.78" y="-151" font-family="opensans" font-size="10.00" fill="white"> librarian_id INT</text>
+</g>
+<!-- Loans&#45;&gt;Books -->
+<g id="edge4" class="edge">
+<title>Loans:book_id-&gt;Books:book_id</title>
+<path fill="none" stroke="#5ea54a" d="M248.5,-243C317.29,-243 259.12,-372.75 315.01,-385.92"></path>
+<polygon fill="#5ea54a" stroke="#5ea54a" points="314.68,-389.41 325,-387 315.43,-382.45 314.68,-389.41"></polygon>
+</g>
+<!-- Loans&#45;&gt;Members -->
+<g id="edge5" class="edge">
+<title>Loans:member_id-&gt;Members:member_id</title>
+<path fill="none" stroke="#5ea54a" d="M248.5,-225C266.18,-225 272.99,-225 286.76,-225"></path>
+<polygon fill="#5ea54a" stroke="#5ea54a" points="287,-228.5 297,-225 287,-221.5 287,-228.5"></polygon>
+</g>
+<!-- Loans&#45;&gt;Librarians -->
+<g id="edge6" class="edge">
+<title>Loans:librarian_id-&gt;Librarians:librarian_id</title>
+<path fill="none" stroke="#5ea54a" d="M248.5,-153C287.6,-153 273.37,-93.36 302.89,-82.64"></path>
+<polygon fill="#5ea54a" stroke="#5ea54a" points="303.69,-86.05 313,-81 302.57,-79.14 303.69,-86.05"></polygon>
+</g>
+<!-- Reservations -->
+<g id="node8" class="node">
+<title>Reservations</title>
+<polygon fill="#232d95" stroke="transparent" points="0.5,-405 0.5,-423 261.5,-423 261.5,-405 0.5,-405"></polygon>
+<polygon fill="none" stroke="white" points="0.5,-405 0.5,-423 261.5,-423 261.5,-405 0.5,-405"></polygon>
+<text text-anchor="start" x="3.5" y="-412" font-family="opensans" font-weight="bold" font-size="10.00" fill="white">Reservations</text>
+<polygon fill="#404040" stroke="transparent" points="0.5,-387 0.5,-405 261.5,-405 261.5,-387 0.5,-387"></polygon>
+<polygon fill="none" stroke="white" points="0.5,-387 0.5,-405 261.5,-405 261.5,-387 0.5,-387"></polygon>
+<text text-anchor="start" x="3.5" y="-394" font-family="opensans" font-size="10.00" fill="#e2c044">PK </text>
+<text text-anchor="start" x="18.78" y="-394" font-family="opensans" font-size="10.00"> | </text>
+<text text-anchor="start" x="25.78" y="-394" font-family="opensans" font-size="10.00" fill="white"> reservation_id INT &#160;AUTO_INCREMENT</text>
+<polygon fill="#404040" stroke="transparent" points="0.5,-369 0.5,-387 261.5,-387 261.5,-369 0.5,-369"></polygon>
+<polygon fill="none" stroke="white" points="0.5,-369 0.5,-387 261.5,-387 261.5,-369 0.5,-369"></polygon>
+<text text-anchor="start" x="3.5" y="-376" font-family="opensans" font-size="10.00" fill="#e2c044">FK </text>
+<text text-anchor="start" x="18.78" y="-376" font-family="opensans" font-size="10.00"> | </text>
+<text text-anchor="start" x="25.78" y="-376" font-family="opensans" font-size="10.00" fill="white"> book_id INT</text>
+<polygon fill="#404040" stroke="transparent" points="0.5,-351 0.5,-369 261.5,-369 261.5,-351 0.5,-351"></polygon>
+<polygon fill="none" stroke="white" points="0.5,-351 0.5,-369 261.5,-369 261.5,-351 0.5,-351"></polygon>
+<text text-anchor="start" x="3.5" y="-358" font-family="opensans" font-size="10.00" fill="#e2c044">FK </text>
+<text text-anchor="start" x="18.78" y="-358" font-family="opensans" font-size="10.00"> | </text>
+<text text-anchor="start" x="25.78" y="-358" font-family="opensans" font-size="10.00" fill="white"> member_id INT</text>
+<polygon fill="#404040" stroke="transparent" points="0.5,-333 0.5,-351 261.5,-351 261.5,-333 0.5,-333"></polygon>
+<polygon fill="none" stroke="white" points="0.5,-333 0.5,-351 261.5,-351 261.5,-333 0.5,-333"></polygon>
+<text text-anchor="start" x="3.12" y="-339" font-family="opensans" font-size="10.00" fill="white"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;reservation_date DATE DEFAULT (CURRENT_DATE)</text>
+<polygon fill="#404040" stroke="transparent" points="0.5,-315 0.5,-333 261.5,-333 261.5,-315 0.5,-315"></polygon>
+<polygon fill="none" stroke="white" points="0.5,-315 0.5,-333 261.5,-333 261.5,-315 0.5,-315"></polygon>
+<text text-anchor="start" x="3.5" y="-321" font-family="opensans" font-size="10.00" fill="white"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;status VARCHAR(50) DEFAULT 'Pending'</text>
+</g>
+<!-- Reservations&#45;&gt;Books -->
+<g id="edge7" class="edge">
+<title>Reservations:book_id-&gt;Books:book_id</title>
+<path fill="none" stroke="#5ea54a" d="M261,-378C286.02,-378 294.22,-384.83 314.9,-386.59"></path>
+<polygon fill="#5ea54a" stroke="#5ea54a" points="314.87,-390.09 325,-387 315.15,-383.1 314.87,-390.09"></polygon>
+</g>
+<!-- Reservations&#45;&gt;Members -->
+<g id="edge8" class="edge">
+<title>Reservations:member_id-&gt;Members:member_id</title>
+<path fill="none" stroke="#5ea54a" d="M261,-360C319.22,-360 245.34,-241.35 287.04,-226.52"></path>
+<polygon fill="#5ea54a" stroke="#5ea54a" points="287.64,-229.97 297,-225 286.59,-223.05 287.64,-229.97"></polygon>
+</g>
+</g>
+</svg>
